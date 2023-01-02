@@ -16,7 +16,7 @@ public class Ohce
     public string Palindrome(string input)
     {
         var stringBuilder = 
-            new StringBuilder(_langue.DireBonjour(_périodeJournée));
+            new StringBuilder();
 
         var reversed = new string(
             input.Reverse().ToArray()
@@ -25,10 +25,19 @@ public class Ohce
         stringBuilder.Append(reversed);
 
         if (reversed.Equals(input))
-            stringBuilder.Append(_langue.BienDit);
+            stringBuilder.Append("\n" + _langue.BienDit);
 
-        stringBuilder.Append(_langue.AuRevoir);
 
         return stringBuilder.ToString();
+    }
+
+    public string Saluer()
+    {
+        return _langue.DireBonjour(_périodeJournée);
+    }
+
+    public string AuRevoir()
+    {
+        return _langue.AuRevoir;
     }
 }
